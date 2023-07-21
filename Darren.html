@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="styles.css">
+
+    <meta name="viewport" content="width=device-width"; initial-scale="1.0" />
+    <title>Kegan's Caddie</title>
+  </head>
+  <body onload="onLoad()">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/CompanyLogo1.png" alt="company logo" width="150" height="80" class="d-inline-block align-text-top pe-4" />
+                    <p class="d-none d-md-block mb-0 companyName">Smart Caddie</p>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" collapse navbar-collapse d-sm-inline-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="Kegan.html">Kegan's Caddie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="Darren.html">Darren's Caddie</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <h1>Darren's Caddie</h1>
+
+
+<div class="container align-items-center">
+
+<div class="row d-flex justify-content-center">
+
+<!-- <form> -->
+  <!-- <div class="form-row align-items-center"> -->
+    <div class="col-lg-4 col-sm-12 ">
+      <label for="temperature"></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Temperature:</div>
+        </div>
+      <input type="text" id="temperature" name="temperature">
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <label  for="altitude"></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Altitude:</div>
+        </div>
+        <input type="text" id="altitude" name="altitude">
+      </div>
+
+    </div>
+    <div class="col-lg-4 col-sm-12">
+    <label  for="wind"></label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Wind:</div>
+      </div>
+    <input type="text" id="wind" name="wind">
+  </div>
+</div>
+  </div>
+  </div>
+  <div class="container containerbody">
+
+  <div class="row p-t-1">
+    <div class="col-lg-12 col-sm-12">
+      <button class="btn btn-outline-dark" type="button" onclick="saveConditions()">Save</button>
+    </div>
+  </div>
+</div>
+
+    <p id="conditionInfo">
+
+    </p>
+
+
+<!-- </div> -->
+  <!-- </form> -->
+
+<div class="container">
+<div class="row">
+
+<div class="col-lg-6 col-sm-12 containerbody">
+
+
+  <form>
+    <div class="m-t-1">
+      <label for="yardage">Yardage:</label>
+      <input type="text" id="yardage" name="yardage"><br>
+    </div>
+    <br>
+    <div class="m-t-1">
+      <label for="windDirection">Wind Direction:</label>
+      <select id="windDirection" name="windDirection">
+        <<option value="headwind">Headwind</option>
+        <<option value="tailwind">TailWind</option>
+        </select>
+    </div>
+        <br>
+
+      <button class="btn btn-dark" type="button" onclick="showDistance()">Calculate</button>
+      </form>
+      <div id="output"></div>
+      </div>
+      <div class="col-lg-6 col-sm-12 containerbody">
+        <h5>Suggested Yardage</h5>
+      <table class="table">
+        <thead>
+        <tr>
+        <th>Club</th>
+        <th>Stock Yardage</th>
+        <th>Suggested Yardage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>50*</td>
+          <td>100 yards</td>
+          <td id="fifty"></td>
+        </tr>
+        <tr>
+          <td>PW</td>
+          <td>115 yards</td>
+          <td id="PW"></td>
+        </tr>
+        <tr>
+          <td>9-iron</td>
+          <td>130 yards</td>
+          <td id="9iron"></td>
+        </tr>
+        <tr>
+          <td>8-iron</td>
+          <td>145 yards</td>
+          <td id="8iron"></td>
+        </tr>
+        <tr>
+          <td>7-iron</td>
+          <td>155 yards</td>
+          <td id="7iron"></td>
+        </tr>
+        <tr>
+          <td>6-iron</td>
+          <td>165 yards</td>
+          <td id="6iron"></td>
+        </tr>
+        <tr>
+          <td>5-iron</td>
+          <td>175 yards</td>
+          <td id="5iron"></td>
+        </tr>
+        <tr>
+          <td>4-iron</td>
+          <td>185 yards</td>
+          <td id="4iron"></td>
+        </tr>
+        <tr>
+          <td>Hybrid</td>
+          <td>200 yards</td>
+          <td id="2iron"></td>
+        </tr>
+        <tr>
+          <td>3-wood</td>
+          <td>220 yards</td>
+          <td id="3wood"></td>
+        </tr>
+        <tr>
+          <td>Driver</td>
+          <td>240 yards</td>
+          <td id="driver"></td>
+        </tr>
+      </tbody>
+      </table>
+      <h6 id="baselineInfo"></h6>
+      </div>
+      </div>
+      </div>
+
+
+
+      <!-- Bootstrap CSS -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-JTZ7lhGtjDpV7A63lfDwtWL9+gYqaTkR5mg1iFrE1wv2Qa5Fkq5c5qHJ8W6FSxtv" crossorigin="anonymous"> -->
+
+      <!-- Bootstrap JavaScript and jQuery -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-JI6j8i+oJkocGN+Q6+nIy6t9YcM0kiuV7Q2tZ1uV7W+cvD/0LV0j+kLssABkiX9P" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-9J3KrO6+LmfO1zV0L47LYaHo+PqwM3r9pamoELrA9tjBEGnETPvLbKC1JQ/7wowg" crossorigin="anonymous"></script> -->
+      <footer class="border-top footer text-muted p-2 justify-content-center">
+             <div class="text-center container justify-content-center">
+                 &copy; 2023 - K|A Graphics - <a class="p-2 text-dark" href="Kegan.html">Kegan's Caddie</a>
+                 <a class="p-2 text-dark" href="Darren.html">Darren's Caddie</a>
+             </div>
+         </footer>
+  </body>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+
+  <script src="Darren.js" charset="utf-8"></script>
+</html>

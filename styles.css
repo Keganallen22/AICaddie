@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+header {
+  text-align: center;
+}
+.containerbody {
+  margin-top: 30px;
+}
+.roundBox {
+  /* border-radius: 75px;
+  border: 2px solid black;
+  margin-left: 5px;*/
+  width: 25%;
+}
+.data {
+  flex-wrap: nowrap !important;
+
+}
+.Weather {
+flex-wrap: nowrap !important;
+border-bottom: 2px solid black;
+/* flex-shrink: unset !important; */
+}
+.yardage {
+  margin-top: 5px;
+}
