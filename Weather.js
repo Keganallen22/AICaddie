@@ -9,6 +9,7 @@ var localWindDeg = 0;
 var localCondition = 0;
 var localAltitude = 0;
 var localWindDir = null;
+var compassdir = null;
 
 function getLocation() {
 // Check if geolocation is supported by the browser
@@ -25,8 +26,7 @@ if ("geolocation" in navigator) {
       // Do something with the location data, e.g. display on a map
       console.log(`Latitude: ${lat}, longitude: ${lng}, altitude: ${alt}`);
       getWeatherData(lat, lng);
-      // document.getElementById("getLat").innerText = lat;
-      
+
     },
     // Error callback function
     (error) => {

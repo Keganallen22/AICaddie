@@ -22,7 +22,13 @@ let clubDistanceRecord = [];
 
 function saveConditions() {
   temperature = localTemperature;
-  altitude = 800;
+
+  if(alt === null) {
+    altitude = 800;
+  }else {
+    altitude = alt * 3.28084;
+  }
+  document.getElementById("altitudeReading").innerText = altitude;
   wind = localWind;
   window.localStorage.setItem("temperatureKey", temperature);
   window.localStorage.setItem("altitudeKey", altitude);
