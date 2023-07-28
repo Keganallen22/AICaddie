@@ -7,11 +7,17 @@ header {
 .containerbody {
   margin-top: 30px;
 }
+.roundContainer {
+  border-radius: 75px;
+  border: 1px solid black;
+  height: 28px;
+}
 .roundBox {
   /* border-radius: 75px;
-  border: 2px solid black;
-  margin-left: 5px;*/
+  border: 2px solid black; */
+  /*margin-left: 5px;*/
   width: 25%;
+  padding: 0;
 }
 .data {
   flex-wrap: nowrap !important;
@@ -23,5 +29,79 @@ border-bottom: 2px solid black;
 /* flex-shrink: unset !important; */
 }
 .yardage {
-  margin-top: 5px;
+  margin-top: 20px;
+}
+/* compass edits */
+.compass {
+  position: relative;
+  width: 100px !important;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  /* background: url(images/golfBoxUpdated.png)
+    center no-repeat; */
+  margin: auto;
+}
+
+.compass > .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 30px 20px 0 20px;
+  border-color: red transparent transparent transparent;
+  z-index: 1;
+}
+
+.compass > .compass-circle,
+.compass > .my-point {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  background: url(images/Compass.jpg)
+    center no-repeat;
+  background-size: contain;
+}
+
+.compass > .my-point {
+  opacity: 0;
+  width: 20%;
+  height: 20%;
+  background: rgb(8, 223, 69);
+  border-radius: 50%;
+  transition: opacity 0.5s ease-out;
+}
+
+.start-btn {
+  margin-bottom: auto;
+}
+.stop-btn {
+  margin-bottom: auto;
+  display: none;
+}
+.start-btn-cont {
+  margin-bottom: auto;
+  display: none;
+}
+.windArrow {
+  position: relative;
+  width: 60px;
+  height: 80px;
+}
+.floatingIsland {
+  width: 100%;
+}
+.noWrap {
+  flex-wrap: nowrap !important;
+
+}
+.width {
+  width: 150px;
 }

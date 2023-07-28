@@ -10,6 +10,8 @@ var windDirection = "headwind"
 var finalDistance = 0;
 var final = 0;
 let clubDistanceRecord = [];
+var windDirCalc = null;
+var suggestedDistance = 0;
 
 // function onLoad() {
 //   if(window.localStorage.getItem("temperatureKey") === null || window.localStorage.getItem("altitudeKey") === null || window.localStorage.getItem("windKey") === null) {
@@ -25,10 +27,12 @@ function saveConditions() {
 
   if(alt === null) {
     altitude = 800;
+    // document.getElementById("altitudeReading").innerText = altitude;
   }else {
     altitude = alt * 3.28084;
+    // document.getElementById("altitudeReading").innerText = altitude;
   }
-  document.getElementById("altitudeReading").innerText = altitude;
+
   wind = localWind;
   window.localStorage.setItem("temperatureKey", temperature);
   window.localStorage.setItem("altitudeKey", altitude);
@@ -60,7 +64,7 @@ clubSuggestions.forEach(clubSuggestions => {
   yardage = clubSuggestions.clubYardage;
   finalDistance = calculateDistance(yardage, temperature, altitude, wind, baselineYardage, baselinetemperature, baselineAltitude);
   final = finalDistance.toFixed(2);
-  document.getElementById(clubSuggestions.clubName).innerText = `${final} yards`;
+  document.getElementById(clubSuggestions.clubName).innerText = `${final} y`;
   //add array to values
 
 });
@@ -84,25 +88,32 @@ clubSuggestions.forEach(clubSuggestions => {
 
 
 function showDistance() {
-yardage = parseInt(document.getElementById("yardage").value);
-if (isNaN(yardage)) {
-  document.getElementById("output").innerHTML = 'Please input the distance of your shot!!'
+  let clubSuggestionsWind = [{clubName: "fiftyWind", clubYardage: "125"},{clubName: "PWWind", clubYardage: "140"},{clubName: "9ironWind", clubYardage: "150"},
+  {clubName: "8ironWind", clubYardage: "160"},{clubName: "7ironWind", clubYardage: "170"},{clubName: "6ironWind", clubYardage: "180"},{clubName: "5ironWind", clubYardage: "190"},
+  {clubName: "4ironWind", clubYardage: "200"},{clubName: "2ironWind", clubYardage: "230"},{clubName: "3woodWind", clubYardage: "270"},{clubName: "driverWind", clubYardage: "300"}];
+// yardage = parseInt(document.getElementById("yardage").value);
+// if (isNaN(yardage)) {
+//   document.getElementById("output").innerHTML = 'Please input the distance of your shot!!'
+// }else {
+if ((windCompass <= 60 && windCompass >= -60) || windCompass >= 300) {
+  windDirCalc = "headwind";
+}else if ((windCompass >= 120 && windCompass <= 240) || windCompass <= -120) {
+  windDirCalc = "tailwind";
 }else {
-windDirection = document.getElementById("windDirection").value;
-
-var finalDistance = calculateDistance(yardage, temperature, altitude, wind, baselineYardage, baselinetemperature, baselineAltitude);
-var suggestedDistance = (yardage - (finalDistance - yardage));
-let suggestedFinal = suggestedDistance.toFixed(2);
-let final = finalDistance.toFixed(2);
-// var recClub = suggestedDistance - finalDistance;
-// if (recClub > 0) {
-//   var clubUp = recClub / 10
-// }
-console.log(final +" yards"); // this will output the adjusted distance based on the inputs provided
-document.getElementById("output").innerHTML = `A shot you would typically hit ${yardage}, the ball will travel ${final} yards.
-<br> If you are playing to ${yardage} yards, I would suggest hitting a club that goes ${suggestedFinal} yards`;
-
-}}
+  windDirCalc = "sidewind";
+}
+clubSuggestionsWind.forEach(clubSuggestionsWind => {
+  yardage = clubSuggestionsWind.clubYardage;
+finalDistance = calculateDistance(yardage, temperature, altitude, wind, baselineYardage, baselinetemperature, baselineAltitude);
+// suggestedDistance = (yardage - (finalDistance - yardage));
+// let suggestedFinal = suggestedDistance.toFixed(2);
+let finalWind = finalDistance.toFixed(2);
+// console.log(final +" yards"); // this will output the adjusted distance based on the inputs provided
+// document.getElementById("output").innerHTML = `A shot you would typically hit ${yardage}, the ball will travel ${final} yards.
+// <br> If you are playing to ${yardage} yards, I would suggest hitting a club that goes ${suggestedFinal} yards`;
+document.getElementById(clubSuggestionsWind.clubName).innerText = `${finalWind} y`;
+});
+}
 
 function calculateDistance(yardage, temperature, altitude, wind, baselineYardage, baselinetemperature, baselineAltitude) {
   var altitudeAdjustment = ((altitude - baselineAltitude)/984.252)*.01;
@@ -113,13 +124,13 @@ function calculateDistance(yardage, temperature, altitude, wind, baselineYardage
   var finalYardage = adjustedYardage * (1 + tempAdjustment);
 
   // adjust for wind
-  if (windDirection == "headwind" && wind != 0) {
+  if (windDirCalc == "headwind" && wind != 0) {
     var headwindAdjustment = wind * 0.01;
     return (finalYardage -((finalYardage * (1 + headwindAdjustment))-finalYardage));
-  } else if (windDirection == "tailwind" && wind != 0) {
+  } else if (windDirCalc == "tailwind" && wind != 0) {
     var tailwindAdjustment = wind * 0.005;
     return (finalYardage * (1 + tailwindAdjustment));
-  } else {
+  } else if (windDirCalc = "tail") {
     return finalYardage;
   }
 
