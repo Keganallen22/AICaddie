@@ -44,7 +44,7 @@ function saveConditions() {
 
 
 function loadTable() {
-let clubSuggestions = [{clubName: "fifty", clubYardage: "125"},{clubName: "PW", clubYardage: "140"},{clubName: "9iron", clubYardage: "150"},
+let clubSuggestions = [{clubName: "SW", clubYardage: "100"},{clubName: "SW3/4", clubYardage: "80"},{clubName: "fifty", clubYardage: "125"},{clubName: "fifty3/4", clubYardage: "110"},{clubName: "PW", clubYardage: "140"},{clubName: "9iron", clubYardage: "150"},
 {clubName: "8iron", clubYardage: "160"},{clubName: "7iron", clubYardage: "170"},{clubName: "6iron", clubYardage: "180"},{clubName: "5iron", clubYardage: "190"},
 {clubName: "4iron", clubYardage: "200"},{clubName: "2iron", clubYardage: "230"},{clubName: "3wood", clubYardage: "270"},{clubName: "driver", clubYardage: "300"}];
 //get or set local storage
@@ -88,7 +88,7 @@ clubSuggestions.forEach(clubSuggestions => {
 
 
 function showDistance() {
-  let clubSuggestionsWind = [{clubName: "fiftyWind", clubYardage: "125"},{clubName: "PWWind", clubYardage: "140"},{clubName: "9ironWind", clubYardage: "150"},
+  let clubSuggestionsWind = [{clubName: "SWWind", clubYardage: "100"},{clubName: "SW3/4Wind", clubYardage: "80"},{clubName: "fiftyWind", clubYardage: "125"},{clubName: "fifty3/4Wind", clubYardage: "110"},{clubName: "PWWind", clubYardage: "140"},{clubName: "9ironWind", clubYardage: "150"},
   {clubName: "8ironWind", clubYardage: "160"},{clubName: "7ironWind", clubYardage: "170"},{clubName: "6ironWind", clubYardage: "180"},{clubName: "5ironWind", clubYardage: "190"},
   {clubName: "4ironWind", clubYardage: "200"},{clubName: "2ironWind", clubYardage: "230"},{clubName: "3woodWind", clubYardage: "270"},{clubName: "driverWind", clubYardage: "300"}];
 // yardage = parseInt(document.getElementById("yardage").value);
@@ -135,3 +135,28 @@ function calculateDistance(yardage, temperature, altitude, wind, baselineYardage
   }
 
 }
+
+function tableHidden() {
+    let element = document.getElementById("56*3/4");
+    let hidden = element.getAttribute("hidden");
+
+    if (hidden) {
+       element.removeAttribute("hidden");
+
+    } else {
+       element.setAttribute("hidden", "hidden");
+
+    }
+  };
+  function tableHidden2() {
+      let element = document.getElementById("50*3/4");
+      let hidden = element.getAttribute("hidden");
+
+      if (hidden) {
+         element.removeAttribute("hidden");
+
+      } else {
+         element.setAttribute("hidden", "hidden");
+
+      }
+    };

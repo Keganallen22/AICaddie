@@ -59,6 +59,7 @@
       <p id="WindBubble">Wind</p>
     </div>
   </div>
+  <br>
   <div class="row noWrap">
     <div class="col-lg-6 col-sm-4 width">
       <img src="images/WindArrow.png" alt="" class="windArrow">
@@ -175,11 +176,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr onclick="tableHidden()">
+          <td>56*</td>
+          <td>100 y</td>
+          <td id="SW"></td>
+          <td id="SWWind"></td>
+        </tr>
+        <tr hidden id="56*3/4">
+          <td>--3/4</td>
+          <td>80 y</td>
+          <td id="SW3/4"></td>
+          <td id="SW3/4Wind"></td>
+        </tr>
+        <tr onclick="tableHidden2()">
           <td>50*</td>
           <td>125 y</td>
           <td id="fifty"></td>
           <td id="fiftyWind"></td>
+        </tr>
+        <tr hidden id="50*3/4">
+          <td>--3/4</td>
+          <td>110 y</td>
+          <td id="fifty3/4"></td>
+          <td id="fifty3/4Wind"></td>
         </tr>
         <tr>
           <td>PW</td>
