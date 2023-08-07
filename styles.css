@@ -1,16 +1,35 @@
 body {
   text-align: center;
+  background-image: url(images/Mountain.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 header {
   text-align: center;
 }
+footer {
+  color: white;
+}
+.table {
+  /* background-color: white; */
+  color: white;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+.WeatherBubble {
+  color: white;
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  padding-top: 25px;
+  font-size: 20px;
+}
 .containerbody {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .roundContainer {
-  border-radius: 75px;
+  /* border-radius: 75px;
   border: 1px solid black;
-  height: 28px;
+  height: 28px; */
 }
 .roundBox {
   /* border-radius: 75px;
@@ -25,8 +44,8 @@ header {
 }
 .Weather {
 flex-wrap: nowrap !important;
-border-bottom: 2px solid black;
-/* flex-shrink: unset !important; */
+/* border-bottom: 2px solid black; */
+flex-shrink: unset !important;
 }
 .yardage {
   margin-top: 20px;
@@ -68,6 +87,7 @@ border-bottom: 2px solid black;
   background: url(images/Compass.jpg)
     center no-repeat;
   background-size: contain;
+  border-radius: 50px;
 }
 
 .compass > .my-point {
@@ -100,10 +120,15 @@ border-bottom: 2px solid black;
 }
 .noWrap {
   flex-wrap: nowrap !important;
+  flex-shrink: unset !important;
+
+}
+.shrink {
+  flex-shrink: unset !important;
 
 }
 .width {
-  width: 150px;
+padding-bottom: 20px;
 }
 .hiddenRow {
   color: light grey;

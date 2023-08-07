@@ -87,6 +87,8 @@ function updateUI(weatherData) {
   // localTemp = window.localStorage.getItem("GPStemperatureKey");
   document.getElementById("LocationBubble").innerText = localLocation;
   document.getElementById("TempBubble").innerText = localTemperature + " *F";
+  document.getElementById("Condition").innerText = localCondition;
+
 
   if(localWindDeg <= 30 || localWindDeg >= 330.01) {
     localWindDir = "N";

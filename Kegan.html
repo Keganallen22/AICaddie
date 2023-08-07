@@ -42,11 +42,18 @@
         </nav>
 
     </header>
-    <h1>Kegan's Caddie</h1>
+    <!-- <h1>Kegan's Caddie</h1> -->
 
 <div class="container-fluid roundContainer ">
-  <div class="row Weather">
-    <div class="col-lg-4 col-sm-2 roundBox">
+  <div class="row Weather nowrap">
+    <div class="container col-sm-6 shrink WeatherBubble">
+      <p id="LocationBubble">Location</p>
+      <p id="TempBubble" class="data">Temperature</p>
+      <p id="Condition">Icon</p>
+      <p id="WindBubble">Wind</p>
+
+
+    <!-- <div class="col-lg-4 col-sm-2 roundBox">
       <p id="LocationBubble">Location</p>
     </div>
     <div class="col-lg-4 col-sm-2 roundBox">
@@ -57,113 +64,35 @@
     </div>
     <div class="col-lg-4 col-sm-2 roundBox">
       <p id="WindBubble">Wind</p>
-    </div>
+    </div> -->
   </div>
-  <br>
-  <div class="row noWrap">
-    <div class="col-lg-6 col-sm-4 width">
+  <div class="container col-sm-4 shrink">
+    <div class="width">
       <img src="images/WindArrow.png" alt="" class="windArrow">
     </div>
 
-  <div class="compass col-lg-6 col-sm-4 width">
+  <div class="compass">
    <div class="arrow"></div>
    <div class="compass-circle"></div>
    <div class="my-point"></div>
   </div>
+  </div>
 </div>
-<div class="image">
+
+</div>
+<!-- <div class="image">
   <img src="images/golfBoxUpdated.png" alt="Floating golf island" class="floatingIsland">
-</div>
+</div> -->
 <button class="start-btn btn btn-dark">Start compass</button>
 <button class="stop-btn btn btn-dark">Stop compass</button>
 <button class="start-btn-cont btn btn-dark">Start Again</button>
-<!-- <div class="container-fluid">
-  <div class="row yardage">
-    <div class="col-lg-8 col-sm-6">
-      <form>
-        <div class="m-t-1">
-          <label for="yardage">Yardage:</label>
-          <input type="text" id="yardage" name="yardage"><br>
-        </div>
-        <br>
-        <div class="m-t-1">
-          <label for="windDirection">Wind Direction:</label>
-          <select id="windDirection" name="windDirection">
-            <<option value="headwind">Headwind</option>
-            <<option value="tailwind">TailWind</option>
-            </select>
-        </div>
-            <br>
 
-          <button class="btn btn-dark" type="button" onclick="showDistance()">Calculate</button>
-          </form>
-    </div>
-  </div>
-
-</div> -->
-
-<!-- <div class="container align-items-center">
-
-<div class="row d-flex justify-content-center">
-
-<form>
-  <div class="form-row align-items-center">
-    <div class="col-lg-4 col-sm-12 ">
-      <label for="temperature"></label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">Temperature:</div>
-        </div>
-      <input type="text" id="temperature" name="temperature">
-    </div>
-    </div>
-    <div class="col-lg-4 col-sm-12">
-      <label  for="altitude"></label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">Altitude:</div>
-        </div>
-        <input type="text" id="altitude" name="altitude">
-      </div>
-
-    </div>
-    <div class="col-lg-4 col-sm-12">
-    <label  for="wind"></label>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text">Wind:</div>
-      </div>
-    <input type="text" id="wind" name="wind">
-  </div>
-</div>
-  </div>
-  </div>
-  <div class="container containerbody">
-
-  <div class="row p-t-1">
-    <div class="col-lg-12 col-sm-12">
-      <button class="btn btn-outline-dark" type="button" onclick="saveConditions()">Save</button>
-    </div>
-  </div>
-</div>
-
-    <p id="conditionInfo">
-
-    </p>
-
-
-</div>
-  </form> -->
-
-<div class="container">
+<div class="container table">
 <div class="row">
 
-<div class="col-lg-6 col-sm-12 containerbody">
-
-
-
+<!-- <div class="col-lg-6 col-sm-12 containerbody">
       <div id="output"></div>
-      </div>
+      </div> -->
       <div class="col-lg-6 col-sm-12 containerbody">
         <h5>Suggested Yardage</h5>
       <table class="table">
@@ -274,10 +203,10 @@
 
 
 
-      <footer class="border-top footer text-muted p-2 justify-content-center">
+      <footer class="border-top footer text-white p-2 justify-content-center">
              <div class="text-center container justify-content-center">
-                 &copy; 2023 - K|A Graphics - <a class="p-2 text-dark" href="Kegan.html">Kegan's Caddie</a>
-                 <a class="p-2 text-dark" href="Darren.html">Darren's Caddie</a>
+                 &copy; 2023 - K|A Graphics - <a class="p-2 text-white" href="Kegan.html">Kegan's Caddie</a>
+                 <a class="p-2 text-white" href="Darren.html">Darren's Caddie</a>
              </div>
          </footer>
   </body>

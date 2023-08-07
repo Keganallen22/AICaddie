@@ -25,7 +25,7 @@ const compassCircle = document.querySelector(".compass-circle");
 
     function startCompass() {
       startBtn.style.display = "none";
-      stopBtn.style.display = "flex";
+      stopBtn.style.display = "inline";
       if (isIOS) {
         DeviceOrientationEvent.requestPermission()
           .then((response) => {
@@ -49,14 +49,14 @@ const compassCircle = document.querySelector(".compass-circle");
       }
 
       // compassCircle.style.transform = `translate(-50%, -50%) rotate(${-compass}deg)`;
-      startBtnCont.style.display = "flex";
+      startBtnCont.style.display = "inline";
 
 
     }
 
     function startButtonCont() {
       startBtnCont.style.display = "none";
-      stopBtn.style.display = "flex";
+      stopBtn.style.display = "inline";
       if (!isIOS) {
         window.addEventListener("deviceorientationabsolute", handler, true);
       }else {
