@@ -3,6 +3,7 @@ body {
   background-image: url(images/Mountain.jpg);
   background-size: cover;
   background-attachment: fixed;
+  -webkit-background-size: cover;
 }
 header {
   text-align: center;
@@ -14,11 +15,13 @@ footer {
   /* background-color: white; */
   color: white;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filer: blur(5px);
   border-radius: 50px;
 }
 .WeatherBubble {
   color: white;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filer: blur(20px);
   border-radius: 50px;
   padding-top: 25px;
   font-size: 20px;
