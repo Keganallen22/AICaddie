@@ -8,7 +8,7 @@
 } */
 body {
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -43,6 +43,10 @@ footer {
   border-radius: 50px;
   padding-top: 25px;
   font-size: 20px;
+  text-align: center;
+}
+.buttons {
+  text-align: center;
 }
 .containerbody {
   margin-top: 10px;
@@ -150,6 +154,7 @@ flex-shrink: unset !important;
 }
 .width {
 padding-bottom: 20px;
+text-align: center;
 }
 .hiddenRow {
   color: light grey;
