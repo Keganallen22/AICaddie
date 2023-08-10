@@ -1,4 +1,5 @@
-
+//jshint esversion: 6
+require('dotenv').config();
 var lat = 0;
 var lng = 0;
 var alt = 0;
@@ -41,7 +42,7 @@ if ("geolocation" in navigator) {
 };
 //Weather API Call
 function getWeatherData(lat, lng) {
-  const apiKey = "1d981ac77e475a90a53fe8bab9bc0c8c";
+  const apiKey = process.env.API_KEY_WEATHER;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&appid=${apiKey}`;
   return fetch(url)
     .then(response => response.json())
